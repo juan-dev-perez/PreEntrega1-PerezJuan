@@ -14,6 +14,12 @@
     background-color: white;
     color: #202020;
     padding: 30px;
+    transition: 0.5s;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 12px 12px 8px #202020;
 }
 
 .title_card{
