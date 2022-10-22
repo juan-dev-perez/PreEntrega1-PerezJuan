@@ -1,0 +1,11 @@
+.item_list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+}
+
+.card_container{
+    padding: 30px;
+}

@@ -1,0 +1,44 @@
+.img_card{
+    width: 100%;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card{
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px 20px 20px 20px;
+    background-color: white;
+    color: #202020;
+    padding: 30px;
+}
+
+.title_card{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+    /* color: #df1a21; */
+    color: #1aa1df;
+}
+
+.description_card{
+    padding-top: 3px;
+    font-size: 14px;
+    color:#7e7d7d;
+}
+
+.price_card{
+    padding-top: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.id_card{
+    font-size:15px;
+    padding-top: 15px;
+    font-size: 13px;
+    color:#7e7d7d;
+}

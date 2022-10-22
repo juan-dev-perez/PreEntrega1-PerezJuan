@@ -1,12 +1,12 @@
 import './Home.css';
 import ItemListContainer from '../../components/Home/ItemListContainer/ItemListContainer';
 
-function App() {
+function Home() {
   return (
     <main>
-      <ItemListContainer greeting = "Bienvenidos al Sitio Web"/>
+      <ItemListContainer/>
     </main>
   );
 }
 
-export default App;
+export default Home;
