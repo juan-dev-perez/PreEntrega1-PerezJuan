@@ -7,9 +7,6 @@ const ItemList = ({items}) => {
             {items.map((item, i) => (
                 <div key={i} className="card_container">
                     <Item item = {item}/>
-                    {/* {item.category} */}
-                    {/* {item.description}
-                    {item.price} */}
                 </div>
             ))}
         </div>
