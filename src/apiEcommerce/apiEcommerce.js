@@ -5,7 +5,8 @@ const apiProducts = [
         description: 'Mouse gamer corsair negro y celeste',
         price: '$15.600',
         pictureUrl: 'https://www.megatecnologia.com.ar/images/1663187438349.jpg',
-        category: 'mouses'
+        category: 'mouses',
+        stock: 12
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ const apiProducts = [
         description: 'Mouse corsair ajustable blanco con gris',
         price: '$14.900',
         pictureUrl: 'https://www.megatecnologia.com.ar/images/1663687899466.jpg',
-        category: 'mouses'
+        category: 'mouses',
+        stock: 19
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ const apiProducts = [
         description: 'Mouse gamer corsair wireless',
         price: '$13.400',
         pictureUrl: 'https://www.megatecnologia.com.ar/images/1663188439405.jpg',
-        category: 'mouses'
+        category: 'mouses',
+        stock: 25
     },
     {
         id: 4,
@@ -29,7 +32,8 @@ const apiProducts = [
         description: 'Mouse Redragon rgb',
         price: '$6.900',
         pictureUrl: 'https://www.megatecnologia.com.ar/images/1653918838272.jpg',
-        category: 'mouses'
+        category: 'mouses',
+        stock: 17
     },
     {
         id: 5,
@@ -37,7 +41,8 @@ const apiProducts = [
         description: 'Teclado corsair low profile speed',
         price: '$36.800',
         pictureUrl: 'https://www.megatecnologia.com.ar/images/1663773345881.jpg',
-        category: 'teclados'
+        category: 'teclados',
+        stock: 9
     },
     {
         id: 6,
@@ -45,7 +50,8 @@ const apiProducts = [
         description: 'Teclado corsair Switch Opx Black',
         price: '$54.500',
         pictureUrl: 'https://www.megatecnologia.com.ar/images/1663772449430.jpg',
-        category: 'teclados'
+        category: 'teclados',
+        stock: 21
     },
     {
         id: 7,
@@ -53,7 +59,8 @@ const apiProducts = [
         description: 'Teclado tkl cherry mx speed',
         price: '$35.000',
         pictureUrl: 'https://www.megatecnologia.com.ar/images/1663775210143.jpg',
-        category: 'teclados'
+        category: 'teclados',
+        stock: 5
     },
     {
         id: 8,
@@ -61,7 +68,8 @@ const apiProducts = [
         description: 'Teclado pro xt english',
         price: '$17.500',
         pictureUrl: 'https://www.megatecnologia.com.ar/images/1663775597390.jpg',
-        category: 'teclados'
+        category: 'teclados',
+        stock: 13
     },
     {
         id: 9,
@@ -69,7 +77,8 @@ const apiProducts = [
         description: 'Auricular corsair color blanco',
         price: '$54.500',
         pictureUrl: 'https://www.megatecnologia.com.ar/images/1663183241148.jpg',
-        category: 'auriculares'
+        category: 'auriculares',
+        stock: 16
     },
     {
         id: 10,
@@ -77,7 +86,8 @@ const apiProducts = [
         description: 'Auricular bluetooth',
         price: '$30.000',
         pictureUrl: 'https://www.megatecnologia.com.ar/images/1663611553086.jpg',
-        category: 'auriculares'
+        category: 'auriculares',
+        stock: 12
     },
     {
         id: 11,
@@ -85,7 +95,8 @@ const apiProducts = [
         description: 'Auricular corsair',
         price: '$23.500',
         pictureUrl: 'https://www.megatecnologia.com.ar/images/1652366044966.jpg',
-        category: 'auriculares'
+        category: 'auriculares',
+        stock: 6
     },
     {
         id: 12,
@@ -93,8 +104,14 @@ const apiProducts = [
         description: 'Auricular corsair gaming',
         price: '$16.800',
         pictureUrl: 'https://www.megatecnologia.com.ar/images/AURICULAR-CORSAIR-GAMING-HS45-CARBON1604255167280.jpg',
-        category: 'auriculares'
+        category: 'auriculares',
+        stock: 15
     }
 ];
+
+export const getProductById = (id) => {
+    
+    return apiProducts.find(product => product.id === parseInt(id));
+}
 
 export default apiProducts;

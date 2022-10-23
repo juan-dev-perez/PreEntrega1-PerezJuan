@@ -1,9 +1,8 @@
 import './ItemListContainer.css';
-// import ItemCount from '../../ItemCount';
-import apiProducts from '../../../apiEcommerce/apiEcommerce';
+import apiProducts from '../../apiEcommerce/apiEcommerce';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ItemList from '../ItemList/ItemList';
+import ItemList from './ItemList/ItemList';
 
 const ItemListContainer = () => {
 
