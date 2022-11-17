@@ -1,7 +1,7 @@
 import './ItemCount.css';
 import { useState } from 'react';
 
-function ItemCount({stock,initial}) {
+function ItemCount({stock,initial,cant}) {
 
     const [cantidad, setCantidad] = useState(initial);
     const [mensaje,setMensaje] = useState('');
@@ -32,7 +32,7 @@ function ItemCount({stock,initial}) {
             </div>
             <p className='stock_count'>Stock: {stock}</p>
             <p className='stock_message'>{mensaje}</p>
-            <button className='btn_count'>Agregar al carrito</button>
+            <button className='btn_count' onClick={() => cant(cantidad)}>Agregar al carrito</button>
         </div>
     )
 }
