@@ -1,0 +1,35 @@
+.item_cart{
+    margin-top: 50px;
+    display:grid;
+    grid-template-areas: 
+        "img title price"
+        "img description cantidad";
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    border-radius: 20px;
+    background-color: white;
+    color: #202020;
+    padding: 30px;
+}
+
+.img_cart{
+    grid-area: img;
+    width: 150px;
+}
+
+.item_cart_title{
+    grid-area: title;
+}
+
+.item_cart_price{
+    grid-area: price;
+}
+
+.item_cart_description{
+    grid-area: description;
+}
+
+.item_cart_cantidad{
+    grid-area: cantidad;
+}

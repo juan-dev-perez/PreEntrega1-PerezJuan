@@ -1,7 +1,21 @@
 .cart-widget {
     margin-left: 30px;
+    position: relative;
+    padding-right: 10px;
 }
 
 .cart-widget img {
     width: 40px;
+}
+
+.counter_cart{
+    position: absolute;
+    top:0px;
+    right: -5px;
+    background-color: white;
+    border-radius:100%;
+    color: #202020;
+    font-weight: bold;
+    padding: 5px;
+    /* text-align: center; */
 }

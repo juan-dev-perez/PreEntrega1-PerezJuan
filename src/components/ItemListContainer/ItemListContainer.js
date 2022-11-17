@@ -10,9 +10,9 @@ const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
 
     const getProducts = (prods) => {
-        setTimeout(() => {
+        // setTimeout(() => {
             setProducts(prods);
-        },2000);
+        // },2000);
     }
 
     useEffect(() => {
