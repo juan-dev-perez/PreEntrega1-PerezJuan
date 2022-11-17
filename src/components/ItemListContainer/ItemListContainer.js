@@ -1,5 +1,4 @@
 import './ItemListContainer.css';
-import apiProducts from '../../apiEcommerce/apiEcommerce';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList/ItemList';
@@ -11,21 +10,17 @@ const ItemListContainer = () => {
     const { category } = useParams();
     const [products, setProducts] = useState([]);
 
-    const getProducts = (prods) => {
-        // setTimeout(() => {
-            setProducts(prods);
-        // },2000);
-    }
-
-    useEffect(() => {
-        getProducts(apiProducts);
+    const getProducts = async (prods) => {
 
         const db = getFirestore();
         const productosCollection = collection(db, 'productos');
-        getDocs(productosCollection).then(snapshot => {
-            console.log(snapshot.docs.map( doc => doc.data()))
+        await getDocs(productosCollection).then(snapshot => {
+            setProducts(snapshot.docs.map( doc => doc.data()));
         })
+    }
 
+    useEffect(() => {
+        getProducts();
     },[]);
 
     return (
