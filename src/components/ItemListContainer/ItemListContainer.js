@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList/ItemList';
 
+import { collection, getFirestore, getDocs } from "firebase/firestore";
+
 const ItemListContainer = () => {
 
     const { category } = useParams();
@@ -17,6 +19,13 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         getProducts(apiProducts);
+
+        const db = getFirestore();
+        const productosCollection = collection(db, 'productos');
+        getDocs(productosCollection).then(snapshot => {
+            console.log(snapshot.docs.map( doc => doc.data()))
+        })
+
     },[]);
 
     return (
