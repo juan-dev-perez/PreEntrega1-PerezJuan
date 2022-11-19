@@ -49,7 +49,6 @@ return (
             cartList.map((item, i) => (
                 <CartItem key={i} item={item}/>
             ))
-            
         }
         {
             cartList[0] &&
