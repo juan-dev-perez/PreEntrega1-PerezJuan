@@ -2,10 +2,12 @@ import { useState, useContext } from 'react';
 import ItemCount from './ItemCount/ItemCount';
 import './ItemDetail.css';
 import { CartContext } from "../../../context/CartContext";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import ItemNoExiste from './ItemNoExiste/ItemNoExiste';
 
 const ItemDetail = ({item}) => {
 
+    const {id} = useParams();
     const { addItem, carCountIcon } = useContext(CartContext);
     const [ canti, setCanti] = useState(0);
 
@@ -19,7 +21,7 @@ const ItemDetail = ({item}) => {
         <div>
             {
                 JSON.stringify(item) === '{}' ?
-                '' :
+                <ItemNoExiste id={id}/> :
                 <div className='card_detail'>
                     <img src={item.pictureUrl} className="img_card" alt={`imagen del producto ${item.title}`}/>
                     <p className='title_card_detail'>{item.title}</p>
