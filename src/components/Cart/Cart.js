@@ -8,7 +8,7 @@ import { addDoc, collection, getFirestore, serverTimestamp } from 'firebase/fire
 
 const Cart = () => {
 
-const {cartList, getTotal, total} = useContext(CartContext);
+const {cartList, getTotal, total, clearCart} = useContext(CartContext);
 const [clientData, setClientData] = useState({})
 const [orderId, setOrderId] = useState('');
 
@@ -58,6 +58,9 @@ return (
                 <h2>{total}</h2>
             </div>
         }
+
+        <button onClick={clearCart}>Vaciar carrito</button>
+
         <ClientForm datos={getDatos}/>
 
         {Object.entries(clientData).length !== 0 && 
