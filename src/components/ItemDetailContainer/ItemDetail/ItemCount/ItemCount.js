@@ -26,9 +26,9 @@ function ItemCount({stock,initial,cant}) {
     return (
         <div className='count_contenedor'>
             <div className="item_count">
-                <button onClick={menos}>-</button>
-                <span>{cantidad}</span>
-                <button onClick={mas}>+</button>
+                <button className='btn_control_cantidad' onClick={menos}>-</button>
+                <span className='cantidad_item'>{cantidad}</span>
+                <button className='btn_control_cantidad' onClick={mas}>+</button>
             </div>
             <p className='stock_count'>Stock: {stock}</p>
             <p className='stock_message'>{mensaje}</p>

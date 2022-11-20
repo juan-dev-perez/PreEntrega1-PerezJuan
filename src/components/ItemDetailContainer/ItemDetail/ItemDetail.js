@@ -27,14 +27,15 @@ const ItemDetail = ({item}) => {
                     <p className='title_card_detail'>{item.title}</p>
                     <p className='description_card_detail'>{item.description}</p>
                     <p className='price_card_detail'>{item.price}</p>
+                    { canti !== 0 && <p className='added_to_cart'>Producto agregado al carrito</p>  }
                     <div className='counter_card_detail'>
-                    
                         {
                             canti === 0 ? 
                                 <ItemCount stock={item.stock} initial={1} cant={onAdd}/>
                             :
-                                <Link to='/cart'>Terminar mi compra</Link>
+                                <Link to='/cart' className='btn_to_cart'>Terminar mi compra</Link>
                         }
+            
                     </div>
                     <p className='id_card_detail'>Id: {item.id}</p>
                 </div>

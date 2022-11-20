@@ -5,15 +5,29 @@
     align-items: center;
     border: 1px solid gray;
     border-radius: 7px;
-    width: 200px;
+    width: 150px;
 }
 
-.item_count button{
+.btn_control_cantidad{
     width: 30px;
     height: 30px;
     border: 0px;
     background-color: inherit;
     font-size: 20px;
+}
+
+.btn_control_cantidad:hover{
+    background-color: rgb(190, 190, 190);
+    border-radius: 7px;
+}
+
+.btn_control_cantidad:active{
+    background-color: rgb(223, 223, 223);
+    border-radius: 7px;
+}
+
+.cantidad_item{
+    font-size: 18px;
 }
 
 .count_contenedor {
@@ -25,12 +39,14 @@
 .stock_count{
     font-size: 15px;
     color:#5f5e5e;
+    margin-top: 7px;
 }
 
 .stock_message{
     font-size: 14px;
     color:#e40d0d;
 }
+
 .btn_count{
     margin-top: 15px;
     padding: 8px;
@@ -38,4 +54,15 @@
     border: 1px solid #1aa1df;
     color: #1aa1df;
     font-weight: bold;
+    text-decoration: none;
+}
+
+.btn_count:hover {
+    background-color: #1aa1df;
+    color: white;
+}
+
+.btn_count:active {
+    background-color: #52b1dd;
+    color: white;
 }

@@ -28,7 +28,7 @@
     padding-top: 15px;
     font-size: 32px;
     font-weight: bold;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .id_card_detail{
@@ -36,4 +36,31 @@
     padding-top: 15px;
     font-size: 15px;
     color:#7c7c7c;
+}
+
+.btn_to_cart{
+    margin-top: 15px;
+    padding: 8px;
+    border-radius: 7px;
+    border: 1px solid #1aa1df;
+    color: #1aa1df;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn_to_cart:hover {
+    background-color: #1aa1df;
+    color: white;
+}
+
+.btn_to_cart:active {
+    background-color: #52b1dd;
+    color: white;
+}
+
+.added_to_cart{
+    margin-bottom: 20px;
+    color: #28a745;
+    font-weight: bold;
+    font-size: large;
 }

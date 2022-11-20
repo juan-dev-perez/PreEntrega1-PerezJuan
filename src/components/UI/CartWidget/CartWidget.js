@@ -8,8 +8,12 @@ const CartWidget = () => {
 
     return (
         <div className="cart-widget">
-            <Link to='/cart'><img src="/icon-cart.png" alt="icono del carrito"/></Link>
-            <div className='counter_cart'>{contador}</div>
+            <Link to='/cart'>
+                <img src="/icon-cart.png" alt="icono del carrito"/>
+            </Link>
+            {
+                contador > 0 && <div className='counter_cart'>{contador}</div>
+            }
         </div>
     )
 };
