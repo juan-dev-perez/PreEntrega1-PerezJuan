@@ -1,8 +1,8 @@
 import './ItemDetailContainer.css';
 import ItemDetail from './ItemDetail/ItemDetail';
-import { getProductById } from '../../apiEcommerce/apiEcommerce';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { collection, getDocs, getFirestore, query, where, limit } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
 
@@ -10,9 +10,14 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
 
     const getProduct = (idProduct) => {
-        // setTimeout(() => {
-            setProduct(getProductById(idProduct));
-        // }, 2000);
+        const idProd = parseInt(idProduct);
+        const db = getFirestore();
+        const productosCollection = collection(db, 'productos');
+        const q = query(productosCollection, 
+            where('id', '==', idProd));
+        getDocs(q).then( snapshot => {
+            setProduct(snapshot.docs[0].data());
+        })
     }
 
     useEffect( () => {

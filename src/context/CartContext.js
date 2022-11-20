@@ -28,13 +28,6 @@ export const CartContextProvider = ({children}) => {
 
     const carCountIcon = (num) => {
         setContador(contador + num);
-        // let count = 0;
-        // const nuevaCantidad = cartList.map( item => {
-        //     count += item.cantidad;
-        //     return count
-        // });
-        // setContador(nuevaCantidad);
-        // console.log(contador);
     }
 
     const getTotal = () => {
@@ -52,16 +45,16 @@ export const CartContextProvider = ({children}) => {
             return item;
         });
         setCartList(newCart);
+        setContador(contador - 1);
     }
 
-    // const clear = () => {
-
-    // }
-
-    // console.log(cartList);
+    const clearCart = () => {
+        setCartList([]);
+        setContador(0);
+    }
 
     return (
-        <CartContext.Provider value={{addItem, cartList, contador, carCountIcon, getTotal, total, removeItem}}>
+        <CartContext.Provider value={{addItem, cartList, contador, carCountIcon, getTotal, total, removeItem, clearCart}}>
             {children}
         </CartContext.Provider>
     )

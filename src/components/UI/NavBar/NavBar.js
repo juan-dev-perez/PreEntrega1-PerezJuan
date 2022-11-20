@@ -1,12 +1,8 @@
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom'
-import { CartContext } from "../../../context/CartContext";
-import { useContext } from 'react';
 
 const NavBar = () => {
-    
-    const {contador} = useContext(CartContext);
 
     return (
     <div className="nav-container">
@@ -18,8 +14,7 @@ const NavBar = () => {
                 <li> <Link to="/category/teclados">Teclados</Link> </li>
                 <li> <Link to="/category/auriculares">Auriculares</Link> </li>
             </ul>
-            {contador !== 0 ? <CartWidget/> : ''}
-             
+            <CartWidget/>
         </div>
     </div>
     )
