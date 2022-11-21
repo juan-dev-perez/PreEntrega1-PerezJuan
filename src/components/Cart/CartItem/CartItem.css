@@ -1,35 +1,18 @@
-.item_cart{
-    margin-top: 50px;
-    display:grid;
-    grid-template-areas: 
-        "img title price"
-        "img description cantidad";
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 80%;
-    border-radius: 20px;
-    background-color: white;
-    color: #202020;
-    padding: 30px;
-}
-
 .img_cart{
-    grid-area: img;
-    width: 150px;
+    width: 80px;
 }
 
-.item_cart_title{
-    grid-area: title;
+.btn_trash{
+    border:0px;
+    background-image: url('/public/icons/recycle-bin-closed.png');
+    background-color: transparent;
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    background-repeat: no-repeat;
 }
 
-.item_cart_price{
-    grid-area: price;
-}
-
-.item_cart_description{
-    grid-area: description;
-}
-
-.item_cart_cantidad{
-    grid-area: cantidad;
+.btn_trash:hover{
+    background-image: url('/public/icons/recycle-bin-open.png');
 }
