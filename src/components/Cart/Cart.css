@@ -1,6 +1,6 @@
 .cart_container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -9,33 +9,4 @@
 .cart_container h1{
     font-size: 40px;
     margin-top: 30px;
-}
-
-.no_items{
-    margin-top: 50px;
-    padding: 40px;
-    background-color: white;
-    border-radius: 20px;
-}
-
-.no_items h2{
-    color: gray;
-    font-size: 28px;
-    margin-bottom: 40px;
-}
-
-.link_to_home{
-    text-decoration: none;
-    padding: 8px;
-    border-radius: 7px;
-    border: 1px solid #1aa1df;
-    color: #1aa1df;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.link_to_home:hover{
-    color: white;
-    /* border: 1px solid white; */
-    background-color: #1aa1df;
 }
