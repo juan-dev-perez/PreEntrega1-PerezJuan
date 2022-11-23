@@ -11,3 +11,29 @@
     justify-content: center;
     align-items: center;
 }
+
+.spinner{
+    border:8px solid white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border-left-color: rgb(0,0,0,0);
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.spinner_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+

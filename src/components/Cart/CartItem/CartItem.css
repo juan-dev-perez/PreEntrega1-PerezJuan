@@ -16,3 +16,12 @@
 .btn_trash:hover{
     background-image: url('/public/icons/recycle-bin-open.png');
 }
+
+.link_item_cart{
+    color: #202020;
+    text-decoration: none;
+}
+
+.link_item_cart:hover{
+    text-decoration: underline;
+}

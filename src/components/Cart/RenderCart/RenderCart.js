@@ -30,8 +30,8 @@ const {cartList, getTotal, total, clearCart} = useContext(CartContext);
                             <tr>
                                 <th>Imagen</th>
                                 <th>Nombre</th>
-                                <th>Cantidad</th>
                                 <th>Precio Por Unidad</th>
+                                <th>Cantidad</th>
                                 <th>Precio Parcial</th>
                             </tr>
                         </thead>

@@ -22,18 +22,26 @@ const ItemListContainer = () => {
         getProducts();
     },[]);
 
-    return (
-        <div className="item_list_container">
-            {!category ?
-                <h1 className="title_item_list_container"> Todos los productos </h1> : 
-                <h1 className="title_item_list_container"> {category} </h1>
-            }
-            {!category ? 
-                <ItemList items={products}/> : 
-                <ItemList items={products.filter( product => product.category === category)}/>
-            }
-        </div>
-    );
+    if(!products[0]){
+        return(
+            <div className='spinner_container'>
+                <div className='spinner'></div>
+            </div>
+        )
+    }else{
+        return (
+            <div className="item_list_container">
+                {!category ?
+                    <h1 className="title_item_list_container"> Todos los productos </h1> : 
+                    <h1 className="title_item_list_container"> {category} </h1>
+                }
+                {!category ? 
+                    <ItemList items={products}/> : 
+                    <ItemList items={products.filter( product => product.category === category)}/>
+                }
+            </div>
+        );
+    }
 };
 
 export default ItemListContainer;

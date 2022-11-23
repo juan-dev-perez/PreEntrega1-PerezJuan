@@ -1,0 +1,41 @@
+.order_success_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.order_success{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+    color: #202020;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 3px #198754;
+}
+
+.order_success h2{
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+.order_success h3{
+    font-size: 40px;
+    color: #198754;
+}
+
+.order_success h1{
+    margin-top: 30px;
+    color: #525151;
+}
+
+.order_success span{
+    font-weight: 400;
+}
+
+.order_success a{
+    margin-top: 40px;
+}
