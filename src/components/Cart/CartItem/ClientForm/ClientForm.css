@@ -19,3 +19,19 @@
     font-size: 15px;
     font-weight: 600;
 }
+
+.error_email{
+    display: '';
+    color: #dc3545;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.error_email_none{
+    display: none;
+}
+
+.email_input_error{
+    box-shadow: 0px 0px 5px 3px  #dc3545;
+}

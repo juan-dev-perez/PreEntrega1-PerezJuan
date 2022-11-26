@@ -4,17 +4,13 @@ import { CartContext } from "../../../context/CartContext";
 import CartItem from "../CartItem/CartItem";
 import ClientForm from "../CartItem/ClientForm/ClientForm";
 
-const RenderCart = ({getData, makeOrder}) => {
+const RenderCart = () => {
 
 const {cartList, getTotal, total, clearCart} = useContext(CartContext);
 
     useEffect( () => {
         getTotal();
-    },[cartList])
-
-    const getDatos = (datos) => {
-        getData(datos);
-    }
+    },[cartList]) 
 
     const numToMoney = (num) => {
         return num.toLocaleString("es",{ style: 'currency', currency: 'ARS'})
@@ -45,14 +41,14 @@ const {cartList, getTotal, total, clearCart} = useContext(CartContext);
                     </table>
                 </div>
                 <div className="form_container">
-                    <ClientForm datos={getDatos}/>
+                    <ClientForm/>
                     <div>
                         <h2>Total</h2>
                         <h2>{numToMoney(total)}</h2>
                     </div>
                     <div className='form_btn_container'>
                         <button className='form_btn_vaciar' onClick={clearCart}>Vaciar carrito</button>
-                        <button className='form_btn_comprar' onClick={makeOrder}>Realizar Compra</button>
+                        <button className='form_btn_comprar' type='submit' form='form-client' >Realizar Compra</button>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { addDoc, collection, getFirestore, serverTimestamp } from 'firebase/firestore';
+import { useNavigate } from "react-router-dom";
 
 export const CartContext = createContext();
 
@@ -7,6 +9,25 @@ export const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([]);
     const [contador,setContador] = useState(0);
     const [total, setTotal] = useState(0);
+    const [sameEmail, setSameEmail] = useState(false);
+    const [orderId, setOrderId] = useState('');
+    const [error, setError] = useState({
+        div: 'error_email_none',
+        email: ''
+    });
+    const [clientData, setClientData] = useState({
+        nombre:'',
+        apellido:'',
+        telefono:'',
+        email:'',
+        email2:''
+    });
+
+    const navigate = useNavigate();
+
+    useEffect( () => {
+        redirectOrderSuccess();
+    },[orderId]);
 
     const isInCart = (id) => {
         return cartList.find(item => item.id === id);
@@ -53,8 +74,51 @@ export const CartContextProvider = ({children}) => {
         setContador(0);
     }
 
+    const validation = async (e) => {
+        e.preventDefault();
+        sameEmail === false ? 
+            setError({...error, div:'error_email', email: 'email_input_error'}) :
+            makeOrder();
+    }
+
+    const makeOrder = async () => {
+        const db = getFirestore();
+        const ordersCollection = collection(db, 'orders');
+        const order = {
+            buyer: clientData,
+            items: cartList,
+            total: total,
+            date: serverTimestamp(),
+            state: 'Generada'
+        }
+        await addDoc(ordersCollection, order).then( ({id}) => setOrderId(id));
+    }
+
+    const redirectOrderSuccess = () => {
+        if(orderId !== ''){
+            navigate(`/order-success/${orderId}`);
+            clearCart();
+        }
+    }
+
     return (
-        <CartContext.Provider value={{addItem, cartList, contador, carCountIcon, getTotal, total, removeItem, clearCart}}>
+        <CartContext.Provider value={{
+            addItem, 
+            cartList, 
+            contador, 
+            carCountIcon, 
+            getTotal, 
+            total, 
+            removeItem, 
+            clearCart, 
+            sameEmail,
+            setSameEmail, 
+            clientData,
+            setClientData,
+            validation,
+            error,
+            setError
+            }}>
             {children}
         </CartContext.Provider>
     )
