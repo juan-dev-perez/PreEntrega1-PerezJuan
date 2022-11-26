@@ -26,7 +26,7 @@ const ItemDetail = ({item}) => {
                     <img src={item.pictureUrl} className="img_card" alt={`imagen del producto ${item.title}`}/>
                     <p className='title_card_detail'>{item.title}</p>
                     <p className='description_card_detail'>{item.description}</p>
-                    <p className='price_card_detail'>{item.price}</p>
+                    <p className='price_card_detail'>${item.price.toLocaleString("es")}</p>
                     { canti !== 0 && <p className='added_to_cart'>Producto agregado al carrito</p>  }
                     <div className='counter_card_detail'>
                         {
